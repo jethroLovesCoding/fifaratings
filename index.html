@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>FIFA Rating Calculator</title>
+    </head>
+    <body>
+        <div id='card'>
+            </br></br><span id='ovr' style='font-size: 18pt;'>OVR NA</span></br></br>
+            <div>PAC <span id='pac'>NA</span><span> | </span>DRI <span id='dri'>NA</span></div>
+            <div>SHO <span id='sho'>NA</span><span> | </span>DEF <span id='def'>NA</span></div>
+            <div>&nbsp;PAS <span id='pas'>NA</span><span> | </span>PHY <span id='phy'>NA</span></div>
+        </div>
+        </br></br></br></br></br></br></br></br></br></br>
+        <div id='stats-panel'>
+            <div id='ball-skill' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Ball Skills</div>
+                <div>Ball Control : &emsp;&emsp;<input id='ball-control' type='number' default=0></div>
+                <div>Dribbling : &emsp;&emsp;&emsp;<input id='dribbling' type='number' default=0></div>
+            </div>
+            <div id='defence' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Defence</div>
+                <div>Marking : &emsp;&emsp;&emsp;&ensp;&nbsp;<input id='marking' type='number' default=0></div>
+                <div>Slide Tackle : &emsp;&emsp;&nbsp;<input id='slide-tackle' type='number' default=0></div>
+                <div>Stand Tackle : &emsp;&emsp;<input id='stand-tackle' type='number' default=0></div>
+            </div>
+            <div id='mental' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Mental</div>
+                <div>Aggression : &emsp;&emsp;&ensp;<input id='aggression' type='number' default=0></div>
+                <div>Reactions : &emsp;&emsp;&emsp;<input id='reactions' type='number' default=0></div>
+                <div>Att. Position : &emsp;&emsp;<input id='att-position' type='number' default=0></div>
+                <div>Interception : &emsp;&emsp;<input id='interception' type='number' default=0></div>
+                <div>Vision : &emsp;&emsp;&emsp;&emsp;&ensp;<input id='vision' type='number' default=0></div>
+                <div>Composure : &emsp;&emsp;&nbsp;<input id='composure' type='number' default=0></div>
+            </div>
+            <div id='passing' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Passing</div>
+                <div>Crossing : &emsp;&emsp;&ensp;&nbsp;<input id='crossing' type='number' default=0></div>
+                <div>Short Pass : &emsp;&emsp;<input id='short-pass' type='number' default=0></div>
+                <div>Long Pass : &emsp;&emsp;&nbsp;<input id='long-pass' type='number' default=0></div>
+            </div>
+            <div id='shooting' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Shooting</div>
+                <div>Heading : &emsp;&emsp;&emsp;<input id='heading' type='number' default=0></div>
+                <div>Shot Power : &emsp;&emsp;<input id='shot-power' type='number' default=0></div>
+                <div>Finishing : &emsp;&emsp;&ensp;&nbsp;<input id='finishing' type='number' default=0></div>
+                <div>Long Shots : &emsp;&emsp;<input id='long-shots' type='number' default=0></div>
+                <div>Curve : &emsp;&emsp;&emsp;&emsp;<input id='curve' type='number' default=0></div>
+                <div>FK Acc. : &emsp;&emsp;&emsp;&nbsp;<input id='fk-acc' type='number' default=0></div>
+                <div>Penalties : &emsp;&emsp;&ensp;&nbsp;<input id='penalties' type='number' default=0></div>
+                <div>Volleys : &emsp;&emsp;&emsp;&ensp;<input id='volley' type='number' default=0></div>
+            </div>
+            <div id='physical' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Physical</div>
+                <div>Acceleration : &emsp;&emsp;<input id='acceleration' type='number' default=0></div>
+                <div>Stamina : &emsp;&emsp;&emsp;&ensp;<input id='stamina' type='number' default=0></div>
+                <div>Strength : &emsp;&emsp;&emsp;&nbsp;<input id='strength' type='number' default=0></div>
+                <div>Balance : &emsp;&emsp;&emsp;&ensp;<input id='balance' type='number' default=0></div>
+                <div>Speed : &emsp;&emsp;&emsp;&emsp;<input id='speed' type='number' default=0></div>
+                <div>Agility : &emsp;&emsp;&emsp;&emsp;<input id='agility' type='number' default=0></div>
+                <div>Jumping : &emsp;&emsp;&emsp;&nbsp;<input id='jumping' type='number' default=0></div>
+            </div>
+            <div id='goalkeeping' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Goalkeeping</div>
+                <div>GK Positioning : &emsp;&emsp;<input id='gk-positioning' type='number' default=0></div>
+                <div>GK Diving : &emsp;&emsp;&emsp;&ensp;&ensp;<input id='gk-diving' type='number' default=0></div>
+                <div>GK Handling : &emsp;&emsp;&ensp;&nbsp;<input id='gk-handling' type='number' default=0></div>
+                <div>GK Kicking : &emsp;&emsp;&emsp;&nbsp;<input id='gk-kicking' type='number' default=0></div>
+                <div>GK Reflexes : &emsp;&emsp;&emsp;<input id='gk-reflexes' type='number' default=0></div>
+            </div>
+            <div id='other' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-top-left-radius: 5px; border-top-right-radius: 5px;'>Other</div>
+                <div>Intl. Reputation : <input id='intl-rep' type='number' value=0></div>
+                <div>Position : &emsp;&emsp;&emsp;<input id='position' type='text' value='ST'></div>
+            </div>
+        </div>
+        <button id='submit'>SUBMIT</button>
+        <div id='your-ratings-cont' style='display: flex;'>
+            <div id='positions' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; border-radius: 5px; padding: 2px;'>Positions</div>
+                <div>Striker : </div>
+                <div>Forward : </div>
+                <div>Wing Forward : </div>
+                <div>Wing Midfielder : </div>
+                <div>Att. Midfielder : </div>
+                <div>Central Midfielder : </div>
+                <div>Def. Midfielder : </div>
+                <div>Wing Fullback : </div>
+                <div>Fullback : </div>
+                <div>Centre Back : </div>
+                <div>Goalkeeper : </div>
+            </div>
+            <div id='ratings' class='stats-panel-cards'>
+                <div style='font-size: 8pt; background-color: #d1d1d1; padding: 2px; color: black; border-radius: 5px;'>Ratings</div>
+                <div><span id='st'>0</span></div>
+                <div><span id='fw'>0</span></div>
+                <div><span id='wf'>0</span></div>
+                <div><span id='wm'>0</span></div>
+                <div><span id='cam'>0</span></div>
+                <div><span id='cm'>0</span></div>
+                <div><span id='cdm'>0</span></div>
+                <div><span id='fwb'>0</span></div>
+                <div><span id='fb'>0</span></div>
+                <div><span id='cb'>0</span></div>
+                <div><span id='gk'>0</span></div>
+            </div>
+        </div>
+    </body>
+    <script src='scripts.js'></script>
+</html>
