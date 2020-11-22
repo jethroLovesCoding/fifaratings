@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ratchet-ui/ratchet.css">
+        <script src="ratchet-ui/ratchet.js"></script>
+        <script src="ratchet-ui/push.js"></script>
+        <script src="ratchet-ui/modals.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>FIFA Ratings Calculator</title>
+    </head>
+    <body>
+        <header class='bar bar-nav'>
+            <h2 class='title'>FIFA Ratings Calculator</h2>
+        </header>
+        <main class='content'>
+            <ul id='ball-skill' class='table-view card'>
+                <li class='table-view-divider'>Ball Skills</li>
+                <li class='table-view-cell'>Ball Control : <input id='ball-control' type='number' value=0></li>
+                <li class='table-view-cell'>Dribbling : <input id='dribbling' type='number' value=0></li>
+            </ul>
+            <ul id='defence' class='table-view card'>
+                <li class='table-view-divider'>Defence</li>
+                <li class='table-view-cell'>Marking : <input id='marking' type='number' value=0></li>
+                <li class='table-view-cell'>Slide Tackle : <input id='slide-tackle' type='number' value=0></li>
+                <li class='table-view-cell'>Stand Tackle : <input id='stand-tackle' type='number' value=0></li>
+            </ul>
+            <ul id='mental' class='table-view card'>
+                <li  class='table-view-divider'>Mental</li>
+                <li class='table-view-cell'>Aggression : <input id='aggression' type='number' value=0></li>
+                <li class='table-view-cell'>Reactions : <input id='reactions' type='number' value=0></li>
+                <li class='table-view-cell'>Att. Position : <input id='att-position' type='number' value=0></li>
+                <li class='table-view-cell'>Interception : <input id='interception' type='number' value=0></li>
+                <li class='table-view-cell'>Vision : <input id='vision' type='number' value=0></div>
+                <li class='table-view-cell'>Composure : <input id='composure' type='number' value=0></li>
+            </ul>
+            <ul id='passing' class='table-view card'>
+                <li class='table-view-divider'>Passing</li>
+                <li class='table-view-cell'>Crossing : <input id='crossing' type='number' value=0></li>
+                <li class='table-view-cell'>Short Pass : <input id='short-pass' type='number' value=0></li>
+                <li class='table-view-cell'>Long Pass : <input id='long-pass' type='number' value=0></li>
+            </ul>
+            <ul id='shooting' class='table-view card'>
+                <li class='table-view-divider'>Shooting</li>
+                <li class='table-view-cell'>Heading : <input id='heading' type='number' value=0></li>
+                <li class='table-view-cell'>Shot Power : <input id='shot-power' type='number' value=0></li>
+                <li class='table-view-cell'>Finishing : <input id='finishing' type='number' value=0></li>
+                <li class='table-view-cell'>Long Shots : <input id='long-shots' type='number' value=0></li>
+                <li class='table-view-cell'>Curve : <input id='curve' type='number' value=0></li>
+                <li class='table-view-cell'>FK Acc. : <input id='fk-acc' type='number' value=0></li>
+                <li class='table-view-cell'>Penalties : <input id='penalties' type='number' value=0></li>
+                <li class='table-view-cell'>Volleys : <input id='volley' type='number' value=0></li>
+            </ul>
+            <ul id='physical' class='table-view card'>
+                <li class='table-view-divider'>Physical</li>
+                <li class='table-view-cell'>Acceleration : <input id='acceleration' type='number' value=0></li>
+                <li class='table-view-cell'>Stamina : <input id='stamina' type='number' value=0 value=0></li>
+                <li class='table-view-cell'>Strength : <input id='strength' type='number' value=0></li>
+                <li class='table-view-cell'>Balance : <input id='balance' type='number' value=0></li>
+                <li class='table-view-cell'>Speed : <input id='speed' type='number' value=0></li>
+                <li class='table-view-cell'>Agility : <input id='agility' type='number' value=0></li>
+                <li class='table-view-cell'>Jumping : <input id='jumping' type='number' value=0></li>
+            </ul>
+            <ul id='goalkeeping' class='table-view card'>
+                <li class='table-view-divider'>Goalkeeping</li>
+                <li class='table-view-cell'>GK Positioning : <input id='gk-positioning' type='number' value=0></li>
+                <li class='table-view-cell'>GK Diving : <input id='gk-diving' type='number' value=0></li>
+                <li class='table-view-cell'>GK Handling : <input id='gk-handling' type='number' value=0></li>
+                <li class='table-view-cell'>GK Kicking : <input id='gk-kicking' type='number' value=0></li>
+                <li class='table-view-cell'>GK Reflexes : <input id='gk-reflexes' type='number' value=0></li>
+            </ul>
+            <ul id='other' class='table-view card'>
+                <li class='table-view-divider'>Other</li>
+                <li class='table-view-cell'>Intl. Reputation : <input id='intl-rep' type='number' value=0></li>
+                <li class='table-view-cell'>Position : <input id='position' type='text' value='ST'></li>
+            </ul>
+            <div class='submit-btn-cont'><a id='submit' class='btn btn-normal' style='width:256px; padding: 16px;' href='#output-panel' onclick='submitClick()'><span class='icon icon-up' style='font-size: 16pt;'></span></a></div>
+            <div id='output-panel' class='modal'>
+                <div class='bar bar-nav'>
+                    <a class='icon icon-close pull-right' href='#output-panel'></a>
+                    <h1 class='title'>Ratings</h1>
+                </div>
+                <div class='content'>
+                    <div id='card'>
+                    </br></br>OVR</br><span id='ovr' style='font-size: 16pt;'>NA</span></br>
+                    <div>PAC <span id='pac'>NA</span><span> | </span>DRI <span id='dri'>NA</span></div>
+                    <div>SHO <span id='sho'>NA</span><span> | </span>DEF <span id='def'>NA</span></div>
+                    <div>&nbsp;PAS <span id='pas'>NA</span><span> | </span>PHY <span id='phy'>NA</span></div>
+                    </div>
+                    <ul id='ratings' class='table-view card'>
+                        <li class='table-view-divider'>Positions</li>
+                        <li class='table-view-cell'>Striker : <span id='st' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Forward : <span id='fw' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Wing Forward : <span id='wf' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Wing Midfielder : <span id='wm' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Att. Midfielder : <span id='cam' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Central Midfielder : <span id='cm' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Def. Midfielder : <span id='cdm' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Wing Fullback : <span id='fwb' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Fullback : <span id='fb' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Centre Back : <span id='cb' class='badge pull-right'>0</span></li>
+                        <li class='table-view-cell'>Goalkeeper : <span id='gk' class='badge pull-right'>0</span></li>
+                    </ul>
+                    <button id='calculate' class='btn btn-positive' onclick='Submit()'>CALCULATE</button>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src='scripts.js'></script>
+</html>
